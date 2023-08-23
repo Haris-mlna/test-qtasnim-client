@@ -1,0 +1,53 @@
+<form (ngSubmit)="createProduct()">
+
+  <button class="close" (click)="closeForm()">Close</button>
+
+  <h2>Input Product</h2>
+
+  <label for="Nama_Barang">Nama Barang</label>
+  <input
+    type="text"
+    id="Nama_Barang"
+    [(ngModel)]="newProduct.Nama_Barang"
+    name="Nama_Barang"
+    required
+  />
+
+  <label for="Stok">Stok</label>
+  <input
+    type="number"
+    id="Stok"
+    [(ngModel)]="newProduct.Stok"
+    name="Stok"
+    required
+  />
+
+  <label for="Jumlah_Terjual">Jumlah Terjual</label>
+  <input
+    type="number"
+    id="Jumlah_Terjual"
+    [(ngModel)]="newProduct.Jumlah_Terjual"
+    name="Jumlah_Terjual"
+    required
+  />
+
+  <label for="Tanggal_Transaksi">Tanggal Transaksi</label>
+  <input
+    type="date"
+    id="Tanggal_Transaksi"
+    [(ngModel)]="newProduct.Tanggal_Transaksi"
+    name="Tanggal_Transaksi"
+    required
+  />
+
+  <label for="Jenis_Barang">Jenis Barang</label>
+  <input
+    type="text"
+    id="Jenis_Barang"
+    [(ngModel)]="newProduct.Jenis_Barang"
+    name="Jenis_Barang"
+    required
+  />
+
+  <button class="submit" type="submit">Create Product</button>
+</form>

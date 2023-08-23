@@ -1,0 +1,26 @@
+<header>
+  <h1>Test Qtasnim</h1>
+  <button (click)="toggleForm()">
+    {{ showsForm ? "Close Form" : "Open Form" }}
+  </button>
+</header>
+
+<app-form
+  *ngIf="showsForm"
+  (formClosed)="toggleForm(); loadProducts()"
+></app-form>
+<main>
+  <h2>Products List</h2>
+  <ul>
+    <li *ngFor="let product of products">
+      <h3>{{ product.Nama_Barang }}</h3>
+      <div class="list-container">
+        <p>Stok: {{ product.Stok }}</p>
+        <p>Jumlah Terjual: {{ product.Jumlah_Terjual }}</p>
+        <p>Tanggal Transaksi: {{ product.Tanggal_Transaksi }}</p>
+        <p>Jenis Barang: {{ product.Jenis_Barang }}</p>
+      </div>
+      <button (click)="deleteProduct(product.id)">Delete</button>
+    </li>
+  </ul>
+</main>
